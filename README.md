@@ -10,6 +10,9 @@ aoc-2025/
 │   └── day01/          # Solution for Day 1
 │       └── main.go
 ├── input/              # What I use to store input files (gitignored)
+├── internal/
+│   └── utils/
+│       └── file.go
 ├── go.mod
 └── README.md
 ```
