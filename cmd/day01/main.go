@@ -24,13 +24,12 @@ func part1(rotations []string) {
 	dialPos := 50
 
 	for _, l := range rotations {
-		direction := string(l[0])
 		turns, err := strconv.Atoi(l[1:])
 		if err != nil {
 			log.Fatalf("failed to parse string input: %v", err)
 		}
 
-		if direction == "R" {
+		if l[0] == 'R' {
 			dialPos += turns
 		} else {
 			dialPos -= turns
@@ -51,7 +50,6 @@ func part2(rotations []string) {
 	dialPos := 50
 
 	for _, l := range rotations {
-		direction := string(l[0])
 		turns, err := strconv.Atoi(l[1:])
 		startPos := dialPos
 
@@ -59,7 +57,7 @@ func part2(rotations []string) {
 			log.Fatalf("failed to parse string input: %v", err)
 		}
 
-		if direction == "R" {
+		if l[0] == 'R' {
 			dialPos += turns
 		} else {
 			dialPos -= turns
