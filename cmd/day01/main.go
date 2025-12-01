@@ -1,15 +1,15 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"log"
-	"os"
 	"strconv"
+
+	"github.com/migvas/aoc-2025/internal/utils"
 )
 
 func main() {
-	lines, err := readLines("./input/d1.txt")
+	lines, err := utils.ReadLines("./input/d1.txt")
 
 	if err != nil {
 		log.Fatalf("failed to read input: %v", err)
@@ -17,27 +17,6 @@ func main() {
 
 	part1(lines)
 	part2(lines)
-}
-
-func readLines(path string) ([]string, error) {
-	file, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-
-	var lines []string
-	for scanner.Scan() {
-		lines = append(lines, scanner.Text())
-	}
-
-	if err := scanner.Err(); err != nil {
-		return nil, err
-	}
-
-	return lines, nil
 }
 
 func part1(rotations []string) {
